@@ -28,7 +28,7 @@ import axios from 'axios';
 
     console.log(user);
 
-    axios.post('http://localhost:5000/users/add', user)
+    axios.post('https://mern-exercise-tracker1.herokuapp.com/users/add', user)
       .then(res => console.log(res.data));
 
     this.setState({

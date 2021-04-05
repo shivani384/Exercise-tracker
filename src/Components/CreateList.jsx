@@ -10,7 +10,7 @@ import axios from 'axios';
 const ExerciseList = (props) => {
     const [exercises,setexercises]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:5000/exercises/')
+        axios.get('https://mern-exercise-tracker1.herokuapp.com/exercises/')
         .then(response => {
           setexercises(response.data )
         })
@@ -20,7 +20,7 @@ const ExerciseList = (props) => {
     },[])
 
    const deleteExercise=(id)=>{
-        axios.delete('http://localhost:5000/exercises/'+id)
+        axios.delete('https://mern-exercise-tracker1.herokuapp.com//exercises/'+id)
           .then(response => { console.log(response.data)});
     
         setexercises(exercises.filter(el => el._id !== id) )

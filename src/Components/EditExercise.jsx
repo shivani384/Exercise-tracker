@@ -23,7 +23,7 @@ import { Redirect } from 'react-router-dom';
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/exercises/'+this.props.match.params.id)
+    axios.get('https://mern-exercise-tracker1.herokuapp.com/exercises/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           username: response.data.username,
@@ -36,7 +36,7 @@ import { Redirect } from 'react-router-dom';
         console.log(error);
       })
 
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://mern-exercise-tracker1.herokuapp.com/users/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -86,7 +86,7 @@ import { Redirect } from 'react-router-dom';
 
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercises/update/' + this.props.match.params.id, exercise)
+    axios.post('https://mern-exercise-tracker1.herokuapp.com/exercises/update/' + this.props.match.params.id, exercise)
       .then(res =>{ console.log(res.data);
       return  <Redirect from="/edit:id" to="/"/>})
       .catch(err=>console.log(err));

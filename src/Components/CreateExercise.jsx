@@ -23,7 +23,7 @@ import "react-datepicker/dist/react-datepicker.css";
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://mern-exercise-tracker1.herokuapp.com/users/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -74,7 +74,7 @@ import "react-datepicker/dist/react-datepicker.css";
 console.log("exercise entry");
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercises/add', exercise)
+    axios.post('https://mern-exercise-tracker1.herokuapp.com/exercises/add', exercise)
       .then(res => console.log("exercise added"))
       .catch((error) => {
         console.log(error);
